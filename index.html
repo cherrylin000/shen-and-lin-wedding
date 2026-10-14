@@ -9,15 +9,13 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="沈航 × 林涵昀 婚礼预约" />
 <meta property="og:description" content="隔着山海，一起见证我们的婚礼。" />
-<meta property="og:url" content="https://cherrylin000.github.io/shen-and-lin-wedding/" />
 <meta property="og:image" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-icon.png" />
 <meta property="og:image:width" content="600" />
 <meta property="og:image:height" content="600" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="沈航 × 林涵昀 婚礼预约" />
 <meta name="twitter:image" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-icon.png" />
-<link rel="canonical" href="https://cherrylin000.github.io/shen-and-lin-wedding/" />
-<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="assets/optimized/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
 <link rel="stylesheet" href="assets/live.css?v=20261014-3" />
@@ -62,22 +60,8 @@
     font-display: swap;
   }
   @font-face {
-    font-family: "Ramega Zhang Qingping Kaishu";
-    src: url("./assets/fonts/ramega-zhangqingping-kaishu.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
     font-family: "Source Han Serif SC";
-    src: url("./assets/fonts/source-han-serif-sc.woff2?v=20261014-6") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "AR PL UKai CN";
-    src: url("./assets/fonts/ar-pl-ukai-cn.woff2") format("woff2");
+    src: url("./assets/fonts/source-han-serif-headings.woff2?v=20261014-perf") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -96,20 +80,6 @@
     font-style: normal;
     font-display: swap;
   }
-  @font-face {
-    font-family: "Zhuque Fangsong";
-    src: url("./assets/fonts/zhuque-fangsong.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "slideyouran";
-    src: url("./assets/fonts/slideyouran.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
   /* Shared font slots; the invite opens in Chinese and can switch to English. */
   :root {
     --font-body: Inter, system-ui, sans-serif;
@@ -123,7 +93,7 @@
   html[lang^="zh"] {
     --font-body: "LXGW WenKai", serif;
     --font-script: "Source Han Serif SC", "Noto Serif SC", serif;
-    --font-name: "Ramega Zhang Qingping Kaishu", "LXGW WenKai", serif;
+    --font-name: "LXGW WenKai", serif;
     --font-kicker: "Source Han Serif SC", "Noto Serif SC", serif;
     --font-kicker-weight: 400;
     --font-script-weight: 400;
@@ -180,7 +150,7 @@
     overflow-x: hidden;
   }
   body.locked { overflow: hidden; height: 100svh; }
-  img { max-width: 100%; display: block; }
+  img { max-width: 100%; height: auto; display: block; }
   button, input, textarea, select { font: inherit; color: inherit; }
   a { color: var(--accent); }
   .script { font-family: var(--font-script); font-weight: var(--font-script-weight); }
@@ -493,6 +463,9 @@
     letter-spacing: 0.08em;
     line-height: 1.18;
   }
+  .name-art { display: none; }
+  html[lang^="zh"] .hero-name .name-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  html[lang^="zh"] .name-art { display: block; width: var(--name-width); height: 1.18em; background: currentColor; -webkit-mask: var(--name-art) center / 100% 100% no-repeat; mask: var(--name-art) center / 100% 100% no-repeat; }
   .hero-flower {
     /* demo: h-10 w-auto → ~40px tall; keep height-first so sprig isn't flat */
     height: clamp(18px, 6.5cqh, 26px); width: auto; flex-shrink: 0; margin: clamp(4px, 1.5cqh, 8px) auto;
@@ -764,6 +737,8 @@
     section { padding-left: 16px; padding-right: 16px; }
   }
 </style>
+<meta property="og:url" content="https://cherrylin000.github.io/shen-and-lin-wedding/">
+<link rel="canonical" href="https://cherrylin000.github.io/shen-and-lin-wedding/">
 </head>
 <body class="locked">
 
@@ -803,7 +778,7 @@
             </div>
             <div class="wax-seal-overlay" aria-hidden="true">
               <div class="wax-seal-pivot">
-                <img class="wax-seal" src="assets/wax-seal.png" alt="" />
+                <img class="wax-seal" src="assets/optimized/wax-seal.webp" alt="" decoding="async" fetchpriority="high" width="512" height="506" />
               </div>
             </div>
           </div>
@@ -814,17 +789,17 @@
 </div>
 
 <button type="button" class="intro-skip" id="skipIntro" data-i18n="tap">轻点开启</button>
-<audio id="bgm" src="assets/bgm.mp3" loop preload="auto"></audio>
+<audio id="bgm" data-src="assets/optimized/bgm.m4a" loop preload="none"></audio>
 
 <main id="main">
   <!-- Hero -->
   <section id="hero">
-    <video id="heroVideo" src="assets/Hero.mp4" muted loop playsinline preload="auto"></video>
+    <video id="heroVideo" data-src="assets/optimized/hero.mp4" poster="assets/optimized/hero-poster.webp" muted loop playsinline preload="none"></video>
     <div class="hero-content">
       <p class="hero-kicker" data-i18n="kicker">We are getting married</p>
-      <h1 class="hero-name n1" data-i18n="name1">Hang</h1>
-      <img class="hero-flower" src="assets/small-flower.png" alt="" />
-      <h1 class="hero-name n2" data-i18n="name2">Hanyun</h1>
+      <h1 class="hero-name n1"><span class="name-label" data-i18n="name1">Hang</span><span class="name-art" aria-hidden="true" style="--name-art:url(assets/optimized/name-1.svg);--name-width:2.060em"></span></h1>
+      <img class="hero-flower" src="assets/optimized/small-flower.webp" alt="" decoding="async" width="320" height="114" />
+      <h1 class="hero-name n2"><span class="name-label" data-i18n="name2">Hanyun</span><span class="name-art" aria-hidden="true" style="--name-art:url(assets/optimized/name-2.svg);--name-width:3.090em"></span></h1>
       <p class="hero-sub" data-i18n="heroSub">A special moment, shared with you.</p>
       <div class="hero-rule"></div>
       <p class="hero-place"><span data-i18n="place">Auckland, New Zealand</span></p>
@@ -839,7 +814,7 @@
   <!-- Countdown -->
   <section id="countdown" class="fade-up">
     <h2 class="sec-title" data-i18n="countdown">Countdown</h2>
-    <img class="sticker watch" src="assets/vintage-clock.png" alt="" />
+    <img class="sticker watch" src="assets/optimized/vintage-clock.webp" alt="" loading="lazy" decoding="async" width="457" height="480" />
     <p class="countdown-msg" data-i18n="countdownMsg">You are invited to celebrate our wedding on {date}.</p>
     <div class="countdown-grid" aria-live="polite">
       <div class="cd-cell"><div class="cd-num" id="cdD">00</div><div class="cd-label" data-i18n="days">Days</div></div>
@@ -851,7 +826,7 @@
 
   <section id="letter" class="fade-up">
     <h2 class="sec-title" data-i18n="letter">一封信</h2>
-    <img class="letter-sticker" src="assets/vintage-letter-envelope.png" alt="" />
+    <img class="letter-sticker" src="assets/optimized/vintage-letter-envelope.webp" alt="" loading="lazy" decoding="async" width="360" height="321" />
     <div class="letter-scene">
     <div class="letter-envelope-back" aria-hidden="true"></div>
     <div class="letter-sheet"><div class="letter-reading">
@@ -912,7 +887,7 @@
   <!-- Our Story -->
   <section id="story" class="fade-up">
     <h2 class="sec-title" data-i18n="story">Our Story</h2>
-    <img class="sticker" src="assets/vintage-two-flowers.png" alt="" />
+    <img class="sticker" src="assets/optimized/vintage-two-flowers.webp" alt="" loading="lazy" decoding="async" width="287" height="320" />
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-dot">22</div>
@@ -1014,18 +989,18 @@
   <section id="pictures" class="fade-up">
     <h2 class="sec-title" data-i18n="pictures">Pictures</h2>
     <p class="pics-sub" data-i18n="picsSub">A few moments from our journey together.</p>
-    <img class="sticker" src="assets/vintage-pictures-frames.png" alt="" />
+    <img class="sticker" src="assets/optimized/vintage-pictures-frames.webp" alt="" loading="lazy" decoding="async" width="254" height="316" />
     <div class="carousel">
       <div class="carousel-track" id="carTrack">
-        <div class="carousel-slide"><img src="assets/pic-1.jpg" alt="Photo 1" /></div>
-        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64152893"><img src="assets/polaroid-1014-1.jpg" alt="Graduation together" style="width:120.772947%;left:-10.386473%;top:-2.582645%;" /></div></div>
-        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64137931"><img src="assets/polaroid-1014-2.jpg" alt="A seaside holiday" style="width:119.474313%;left:-9.677419%;top:-7.701149%;" /></div></div>
-        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64013579"><img src="assets/polaroid-1014-3.jpg" alt="Surfing in Wanning" style="width:119.904077%;left:-9.952038%;top:-7.710012%;" /></div></div>
-        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.70008204"><img src="assets/polaroid-1014-4.jpg" alt="Together in traditional dress" style="width:107.642626%;left:-3.659849%;top:-6.787330%;" /></div></div>
-        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64072923"><img src="assets/polaroid-1014-5.jpg" alt="Our proposal" style="width:111.358575%;left:-6.124722%;top:-3.743316%;" /></div></div>
-        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.65374443"><img src="assets/polaroid-1014-6.jpg" alt="Preparing for our marriage registration photos" style="width:114.678899%;left:-7.339450%;top:0.000000%;" /></div></div>
-        <div class="carousel-slide"><img src="assets/pic-2.jpg" alt="Photo 2" /></div>
-        <div class="carousel-slide"><img src="assets/pic-3.jpg" alt="Photo 3" /></div>
+        <div class="carousel-slide"><img src="assets/optimized/pic-1.webp" alt="Photo 1" loading="lazy" decoding="async" width="1148" height="1395" /></div>
+        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64152893"><img src="assets/optimized/polaroid-1014-1.webp" alt="Graduation together" style="width:120.772947%;left:-10.386473%;top:-2.582645%;" loading="lazy" decoding="async" width="1086" height="1448" /></div></div>
+        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64137931"><img src="assets/optimized/polaroid-1014-2.webp" alt="A seaside holiday" style="width:119.474313%;left:-9.677419%;top:-7.701149%;" loading="lazy" decoding="async" width="960" height="1440" /></div></div>
+        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64013579"><img src="assets/optimized/polaroid-1014-3.webp" alt="Surfing in Wanning" style="width:119.904077%;left:-9.952038%;top:-7.710012%;" loading="lazy" decoding="async" width="1201" height="1800" /></div></div>
+        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.70008204"><img src="assets/optimized/polaroid-1014-4.webp" alt="Together in traditional dress" style="width:107.642626%;left:-3.659849%;top:-6.787330%;" loading="lazy" decoding="async" width="1199" height="1800" /></div></div>
+        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.64072923"><img src="assets/optimized/polaroid-1014-5.webp" alt="Our proposal" style="width:111.358575%;left:-6.124722%;top:-3.743316%;" loading="lazy" decoding="async" width="962" height="1442" /></div></div>
+        <div class="carousel-slide"><div class="polaroid-cutout" style="--photo-ratio:0.65374443"><img src="assets/optimized/polaroid-1014-6.webp" alt="Preparing for our marriage registration photos" style="width:114.678899%;left:-7.339450%;top:0.000000%;" loading="lazy" decoding="async" width="1279" height="1706" /></div></div>
+        <div class="carousel-slide"><img src="assets/optimized/pic-2.webp" alt="Photo 2" loading="lazy" decoding="async" width="1261" height="1533" /></div>
+        <div class="carousel-slide"><img src="assets/optimized/pic-3.webp" alt="Photo 3" loading="lazy" decoding="async" width="1279" height="1555" /></div>
       </div>
       <button type="button" class="car-btn prev" id="carPrev" aria-label="Previous">‹</button>
       <button type="button" class="car-btn next" id="carNext" aria-label="Next">›</button>
@@ -1046,7 +1021,7 @@
   <!-- Ceremony -->
   <section id="program" class="fade-up">
     <h2 class="sec-title" data-i18n="program">Ceremony</h2>
-    <img class="sticker" src="assets/vintage-organ.png" alt="" />
+    <img class="sticker" src="assets/optimized/vintage-organ.webp" alt="" loading="lazy" decoding="async" width="384" height="351" />
     <div class="prog-list">
       <div class="prog-item"><div class="prog-time">01</div><div class="prog-name" data-i18n="prog1">Bridal Entrance</div></div>
       <div class="prog-item"><div class="prog-time">02</div><div class="prog-name" data-i18n="prog2">Opening Blessing</div></div>
@@ -1103,7 +1078,7 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
   <section id="watch" class="fade-up">
     <h2 class="watch-title" data-live-copy="watchTitle">一起见证我们的婚礼</h2>
     <p class="watch-subtitle" data-live-copy="watchSubtitle">这一刻，与你分享。</p>
-    <img class="watch-tv" src="assets/vintage-tv.PNG" alt="复古电视" />
+    <img class="watch-tv" src="assets/optimized/vintage-tv.webp" alt="复古电视" loading="lazy" decoding="async" width="420" height="362" />
     <div class="watch-times">
       <p class="watch-date" data-wedding-date></p>
       <p data-china-time></p><p data-nz-time></p>
@@ -1264,6 +1239,11 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
     const envBody = document.getElementById('envBody');
     // Prepare the real page beneath the paper before cross-fading it away.
     main.classList.add('revealed');
+    if (!heroVideo.getAttribute('src')) {
+      heroVideo.preload = 'auto';
+      heroVideo.src = heroVideo.dataset.src;
+      heroVideo.load();
+    }
     startMusic();
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (skipAnim) {
@@ -1308,6 +1288,7 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
   }
 
   function startMusic() {
+    if (!bgm.getAttribute('src')) bgm.src = bgm.dataset.src;
     bgm.volume = 0.55;
     bgm.play().then(() => {
       musicOn = true;
