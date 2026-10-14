@@ -1,0 +1,48 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hang and Hanyun//Wedding Invitation//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hang-hanyun-wedding-20261031@wedding-invite
+DTSTAMP:20261013T163801Z
+DTSTART:20261030T213000Z
+DTEND:20261030T220000Z
+SUMMARY:沈航 & 林涵昀｜婚礼直播
+DESCRIPTION:一起见证沈航与林涵昀的婚礼。\n北京时间：05:3
+ 0 · 奥克兰时间：10:30\n\n婚礼直播：\nhttps://view.oneroomstrea
+ ming.com/index.php?data=MTc4NzIwNDE4NjQyNzU0OCZvbmVyb29tLWFkbWluJmNvcHlfbG
+ luaw==
+LOCATION:St Matthew-in-the-City\, Auckland\, New Zealand
+URL:https://view.oneroomstreaming.com/index.php?data=MTc4NzIwNDE4NjQyNzU0OC
+ ZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:沈航 & 林涵昀｜婚礼直播
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:hang-hanyun-reminder-20261030@wedding-invite
+DTSTAMP:20261013T163801Z
+DTSTART:20261030T120000Z
+DTEND:20261030T121500Z
+SUMMARY:明早有婚礼直播，今晚早点睡 🌙
+DESCRIPTION:明天早上 05:30（北京时间），欢迎来见证我们的
+ 婚礼。今晚早点休息，明早见！\n北京时间：05:30 · 奥克
+ 兰时间：10:30\n\n婚礼直播：\nhttps://view.oneroomstreaming.com/in
+ dex.php?data=MTc4NzIwNDE4NjQyNzU0OCZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+LOCATION:线上 · 北京时间 20:00 提醒
+URL:https://view.oneroomstreaming.com/index.php?data=MTc4NzIwNDE4NjQyNzU0OC
+ ZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:明早有婚礼直播，今晚早点睡 🌙
+END:VALARM
+END:VEVENT
+END:VCALENDAR
