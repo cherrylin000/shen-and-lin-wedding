@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Hang and Hanyun//Wedding Invitation//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:hang-hanyun-wedding-20261031@wedding-invite
+DTSTAMP:20261013T163802Z
+DTSTART:20261030T213000Z
+DTEND:20261030T220000Z
+SUMMARY:Hang & Hanyun | Wedding Livestream
+DESCRIPTION:Join us online for Hang & Hanyun's wedding ceremony.\nBeijing: 
+ 05:30 · Auckland: 10:30\n\nWatch here:\nhttps://view.oneroomstreaming.com
+ /index.php?data=MTc4NzIwNDE4NjQyNzU0OCZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+LOCATION:St Matthew-in-the-City\, Auckland\, New Zealand
+URL:https://view.oneroomstreaming.com/index.php?data=MTc4NzIwNDE4NjQyNzU0OC
+ ZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Hang & Hanyun | Wedding Livestream
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:hang-hanyun-reminder-20261030@wedding-invite
+DTSTAMP:20261013T163802Z
+DTSTART:20261030T120000Z
+DTEND:20261030T121500Z
+SUMMARY:Wedding Tomorrow! Get Some Rest 🌙
+DESCRIPTION:Our wedding livestream starts tomorrow at 05:30 Beijing time. G
+ et some rest\, and see you in the morning!\nBeijing: 05:30 · Auckland: 10
+ :30\n\nWatch here:\nhttps://view.oneroomstreaming.com/index.php?data=MTc4N
+ zIwNDE4NjQyNzU0OCZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+LOCATION:Online · reminder at 20:00 Beijing time
+URL:https://view.oneroomstreaming.com/index.php?data=MTc4NzIwNDE4NjQyNzU0OC
+ ZvbmVyb29tLWFkbWluJmNvcHlfbGluaw==
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:PT0M
+DESCRIPTION:Wedding Tomorrow! Get Some Rest 🌙
+END:VALARM
+END:VEVENT
+END:VCALENDAR
