@@ -23,6 +23,18 @@ English fonts are self-hosted WOFF2, including Inter and Parisienne. The English
 
 Unused former font files remain available for reverting the design.
 
+Performance edition: the two fixed Chinese names are displayed with SVG outline
+artwork generated from the unchanged original 瑞美加张清平硬笔楷书 font. Accessible
+Chinese name text remains in the headings. This removes the 8.8 MB full font from
+the publication bundle without distributing a modified font or changing the
+letterforms. Original font and pre-optimization HTML remain in the workspace.
+If the Chinese names change, regenerate assets/optimized/name-1.svg and name-2.svg.
+
+The performance edition uses source-han-serif-headings.woff2 (about 32 KB) for
+the current Chinese chapter titles, story headings, hero kicker and calendar
+dialog heading. Extend it with scripts/optimize-heading-font.py when headings
+change. The original full Source Han source/subsets remain available locally.
+
 ## Palette
 
 - Hero names: #ECAEC7
