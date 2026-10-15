@@ -1,7 +1,7 @@
 (function (root) {
   'use strict';
   const config = Object.freeze({
-    siteTitle: '沈航 × 林涵昀 婚礼预约',
+    siteTitle: '👩🏻‍❤️‍👨🏻沈航 × 林涵昀 | 婚礼请柬',
     names: { zh: ['沈航', '林涵昀'], en: ['Hang', 'Hanyun'] },
     venue: 'St Matthew-in-the-City, Auckland, New Zealand',
     venueName: 'St Matthew-in-the-City',

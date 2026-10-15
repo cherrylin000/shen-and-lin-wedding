@@ -10,7 +10,7 @@
       googleWedding: '保存婚礼直播日程', googleReminder: '保存前晚温馨提醒',
       calendarNote: '下载日历文件后，用手机自带日历打开并导入，包含婚礼直播和前晚 20:00（北京时间）两个日程。请检查两个日程及通知设置。使用 Google 日历时需分别保存。',
       browserNote: '若微信内打不开直播或日历链接，请从右上角菜单选择在浏览器中打开。',
-      venue: 'St Matthew-in-the-City · 奥克兰',
+      venue: '圣马修城市教堂 · 奥克兰',
       replayNote: '支持直播回放，计划保留至 {replayDate}。'
     },
     en: {

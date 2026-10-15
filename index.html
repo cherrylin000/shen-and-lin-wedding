@@ -3,22 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>沈航 × 林涵昀 婚礼预约</title>
+<title>👩🏻‍❤️‍👨🏻沈航 × 林涵昀 | 婚礼请柬</title>
 <link rel="preload" href="assets/fonts/dancing-script-semibold.woff2?v=20261014-photos" as="font" type="font/woff2" crossorigin />
-<meta name="description" content="隔着山海，一起见证沈航与林涵昀的婚礼。直播与回放、日历提醒。" />
+<meta name="description" content="不必远行，也不必盛装，隔着山海，一起线上见证我们的婚礼。" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="沈航 × 林涵昀 婚礼预约" />
-<meta property="og:description" content="隔着山海，一起见证我们的婚礼。" />
-<meta property="og:image" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-icon.png" />
-<meta property="og:image:width" content="600" />
-<meta property="og:image:height" content="600" />
+<meta property="og:title" content="👩🏻‍❤️‍👨🏻沈航 × 林涵昀 | 婚礼请柬" />
+<meta property="og:description" content="不必远行，也不必盛装，隔着山海，一起线上见证我们的婚礼。" />
+<meta property="og:image" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-20261015.jpg" />
+<meta property="og:image:secure_url" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-20261015.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:image:width" content="360" />
+<meta property="og:image:height" content="360" />
+<meta name="twitter:description" content="不必远行，也不必盛装，隔着山海，一起线上见证我们的婚礼。" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="沈航 × 林涵昀 婚礼预约" />
-<meta name="twitter:image" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-icon.png" />
-<link rel="icon" type="image/svg+xml" href="assets/optimized/favicon.svg" />
-<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
-<link rel="stylesheet" href="assets/live.css?v=20261014-3" />
+<meta name="twitter:title" content="👩🏻‍❤️‍👨🏻沈航 × 林涵昀 | 婚礼请柬" />
+<meta name="twitter:image" content="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-20261015.jpg" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192-20261015.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32-20261015.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon-20261015.png" />
+<link rel="image_src" href="https://cherrylin000.github.io/shen-and-lin-wedding/assets/icons/share-20261015.jpg" />
+<link rel="stylesheet" href="assets/live.css?v=20261015-1" />
 <style>
   @font-face { font-family: Inter; src: url("assets/fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
   @font-face { font-family: Parisienne; src: url("assets/fonts/parisienne.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
@@ -68,7 +73,7 @@
   }
   @font-face {
     font-family: "LXGW WenKai";
-    src: url("./assets/fonts/lxgw-wenkai-current.woff2?v=20261014-9") format("woff2");
+    src: url("./assets/fonts/lxgw-wenkai-current.woff2?v=20261015-1") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -153,6 +158,7 @@
   img { max-width: 100%; height: auto; display: block; }
   button, input, textarea, select { font: inherit; color: inherit; }
   a { color: var(--accent); }
+  .share-thumbnail { position: absolute; left: -10000px; top: 0; width: 360px; height: 360px; overflow: hidden; opacity: 0; pointer-events: none; }
   .script { font-family: var(--font-script); font-weight: var(--font-script-weight); }
   .name-script { font-family: var(--font-name); font-weight: var(--font-name-weight); }
 
@@ -374,7 +380,7 @@
     left: 50%; transform: translateX(-50%); z-index: 60;
     min-height: 44px; padding: 12px 18px; margin-bottom: -12px;
     border: 0; background: transparent; color: #70615E;
-    font: inherit; font-size: 11px; font-weight: 500; letter-spacing: .28em;
+    font: inherit; font-size: 13px; font-weight: 500; letter-spacing: .28em;
     white-space: nowrap; cursor: pointer; opacity: .8;
   }
   .intro-skip[hidden] { display: none; }
@@ -575,11 +581,16 @@
   .letter-scroll-cue[hidden] { display: none; }
   @media (prefers-reduced-motion: reduce) { .letter-sheet { transition: none; transform: none; } .letter-scroll-cue { animation: none; } }
   .letter-content {
-    width: 100%; height: 100%; overflow-y: auto; padding: 25px 20px 155px;
+    width: 100%; height: 100%; overflow-y: auto; padding: 0;
     -webkit-overflow-scrolling: touch; scrollbar-width: none;
     font-size: var(--fs-body-sm); line-height: 1.9;
+  }
+  .letter-body {
+    min-height: 100%; padding: 25px 20px 155px;
     background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.9em - 1px), rgba(192,82,94,.38) calc(1.9em - 1px), rgba(192,82,94,.38) 1.9em);
-    background-position: 0 25px; background-attachment: local;
+    background-position: 0 25px;
+    transform: translateZ(0); -webkit-backface-visibility: hidden; backface-visibility: hidden;
+    contain: paint;
   }
   .letter-content::-webkit-scrollbar { display: none; width: 0; height: 0; }
   .letter-content:focus { outline: none; }
@@ -648,6 +659,7 @@
     cursor: pointer; font-size: 16px; line-height: 1;
     box-shadow: 0 2px 8px rgba(0,0,0,.12);
   }
+  .car-btn:disabled { opacity: .35; cursor: default; pointer-events: none; box-shadow: none; }
   .car-btn.prev { left: 10px; }
   .car-btn.next { right: 10px; }
   .dots { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 14px; }
@@ -719,7 +731,11 @@
     font-size: var(--fs-body-sm); color: var(--text); line-height: var(--lh-body);
     padding: 0 4px; overflow-wrap: break-word;
   }
-  .faq-item.open .faq-a { max-height: 640px; padding: 0 4px 16px; }
+  .faq-item.open .faq-a { max-height: var(--faq-open-height, 640px); padding: 0 4px 16px; }
+  .faq-q { -webkit-appearance: none; appearance: none; -webkit-tap-highlight-color: transparent; border-radius: 0; outline: none; transition: background-color .16s ease; }
+  .faq-q:active, .faq-q:focus-visible { background: #f6eee4; }
+  .faq-q:focus-visible { outline: 1px solid rgba(89,75,93,.18); outline-offset: -1px; }
+  @media (hover: hover) { .faq-q:hover { background: #f6eee4; } }
 
   /* Narrow phones: stack program row instead of squashing type */
   @media (max-width: 380px) {
@@ -741,6 +757,7 @@
 <link rel="canonical" href="https://cherrylin000.github.io/shen-and-lin-wedding/">
 </head>
 <body class="locked">
+<div class="share-thumbnail" aria-hidden="true"><img src="assets/icons/share-20261015.jpg" width="360" height="360" alt="" decoding="async" /></div>
 
 <!-- Language pill -->
 <div class="lang-pill" role="group" aria-label="Language">
@@ -831,8 +848,9 @@
     <div class="letter-envelope-back" aria-hidden="true"></div>
     <div class="letter-sheet"><div class="letter-reading">
     <div class="letter-content" data-letter-lang="zh" tabindex="0" role="region" aria-label="一封信">
+      <div class="letter-body">
       <p>亲爱的家人和朋友：</p>
-      <p>见字如面。</p>
+      <p>Kia ora!</p>
       <p>关于婚礼，我们想了很久。</p>
       <p>人生有许多重要的时刻，人们总盼着热闹些、圆满些。可想来想去，我们还是觉得，婚姻是两个人的事，最要紧的，是彼此认定了对方。</p>
       <p>于是，我们做了一个小小的决定。</p>
@@ -850,10 +868,12 @@
       <p>谢谢你，曾在我们的故事里。</p>
       <p>也谢谢你，愿意见证它的新一章。</p>
       <p>沈航 &amp; 林涵昀</p>
+      </div>
     </div>
     <div class="letter-content" data-letter-lang="en" tabindex="0" role="region" aria-label="A Letter" hidden>
+      <div class="letter-body">
       <p><strong>To Our Dearest Family and Friends,</strong></p>
-      <p>We hope this letter finds you well.</p>
+      <p>Kia ora!</p>
       <p>We&#x27;ve spent a long time thinking about our wedding.</p>
       <p>There are moments in life that seem to call for grand celebrations, surrounded by everyone we love. But the more we thought about it, the more we felt that marriage, at its heart, is simply about two people choosing each other.</p>
       <p>So we made a little decision.</p>
@@ -871,6 +891,7 @@
       <p>Thank you for being part of our story.</p>
       <p>And thank you for being here as we begin its next chapter.</p>
       <p>Hang &amp; Hanyun</p>
+      </div>
     </div>
     </div>
     <svg class="letter-scroll-cue" viewBox="0 0 18 10" fill="none" aria-hidden="true"><path d="M1 9l8-8 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
@@ -1039,9 +1060,13 @@
     <div class="faq-list">
       <div class="faq-item">
         <button type="button" class="faq-q"><span data-i18n="faq1q">How can I watch the ceremony?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a" data-i18n="faq1a">Scroll to the bottom of this invitation. Tap “Watch Livestream” to open the ceremony link, or “Add to Calendar” to save a reminder.
+        <div class="faq-a" data-i18n="faq1a">Scroll to the bottom of this invitation and choose whichever works best for you:
 
-On the wedding day, simply open the livestream link in WeChat to watch the ceremony.</div>
+Option 1 · Add to Calendar
+Tap “Add to Calendar” to save both the ceremony and the evening-before reminder, and enable calendar notifications. At 8:00 PM Beijing time the night before, your calendar will remind you to get some rest. If you plan to watch live, set a separate morning alarm. On the wedding day, open the ceremony event in your calendar and tap its livestream link.
+
+Option 2 · Bookmark the Livestream
+Tap “Watch Livestream” and bookmark the page that opens. On October 31, open that bookmark at 5:30 AM Beijing time / 10:30 AM Auckland time to join us.</div>
       </div>
       <div class="faq-item">
         <button type="button" class="faq-q"><span data-i18n="faq2q">What’s the time difference?</span><span class="faq-icon">+</span></button>
@@ -1114,9 +1139,9 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
   </footer>
 </main>
 
-<script src="assets/wedding-config.js"></script>
+<script src="assets/wedding-config.js?v=20261015-1"></script>
 <script src="assets/calendar.js"></script>
-<script src="assets/wedding-ui.js?v=20261014-5"></script>
+<script src="assets/wedding-ui.js?v=20261015-1"></script>
 <script>
 (function () {
   const envelope = document.getElementById('envelope');
@@ -1161,7 +1186,7 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
       prog6: "Recessional",
       faqs: "FAQ",
       faq1q: "How can I watch the ceremony?",
-      faq1a: "Scroll to the bottom of this invitation. Tap “Watch Livestream” to open the ceremony link, or “Add to Calendar” to save a reminder.\n\nOn the wedding day, simply open the livestream link in WeChat to watch the ceremony.",
+      faq1a: "Scroll to the bottom of this invitation and choose whichever works best for you:\n\nOption 1 · Add to Calendar\nTap “Add to Calendar” to save both the ceremony and the evening-before reminder, and enable calendar notifications. At 8:00 PM Beijing time the night before, your calendar will remind you to get some rest. If you plan to watch live, set a separate morning alarm. On the wedding day, open the ceremony event in your calendar and tap its livestream link.\n\nOption 2 · Bookmark the Livestream\nTap “Watch Livestream” and bookmark the page that opens. On October 31, open that bookmark at 5:30 AM Beijing time / 10:30 AM Auckland time to join us.",
       faq2q: "What’s the time difference?",
       faq2a: "New Zealand will be on daylight saving time, 5 hours ahead of China.\n\nThe ceremony begins at {nzTime} AM on {monthName} {day} in Auckland, which is {chinaFriendlyTime} AM the same day in Beijing.",
       faq3q: "What if I can’t watch it live?",
@@ -1197,7 +1222,7 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
       prog6: "礼成退场 · 管风琴奏响",
       faqs: "常见问题",
       faq1q: "怎样观看婚礼直播？",
-      faq1a: "滑到请柬底部，点击「进入直播」打开直播链接，或点击「添加日历」保存提醒。\n\n婚礼当天，通过微信打开直播链接，就能远程见证我们的婚礼。",
+      faq1a: "滑到请柬底部，选择你方便的方式：\n\n方式一 · 添加日历\n点击「添加日历」，将婚礼直播和前一晚提醒两个日程保存到手机日历，并开启日历通知。前一晚 20:00（北京时间），日历会提醒你早点休息；想实时观看的话，记得另外设好早上的闹铃。婚礼当天打开日历中的婚礼日程，点击里面的直播链接即可观看。\n\n方式二 · 收藏直播网页\n点击「进入直播」，打开后收藏这个直播网页。10 月 31 日早上 05:30（北京时间），从收藏中打开即可观看。",
       faq2q: "中国和新西兰有几个小时的时差？",
       faq2a: "婚礼当天，新西兰实行夏令时，比北京时间快 5 小时。\n\n婚礼将于新西兰时间 {month} 月 {day} 日上午 {nzTime} 举行，也就是北京时间当天早上 {chinaFriendlyTime}。",
       faq3q: "婚礼太早，起不来怎么办？",
@@ -1228,6 +1253,7 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
       el.hidden = el.dataset.storyLang !== lang;
     });
     window.WeddingUI.render(lang);
+    requestAnimationFrame(syncFaqHeights);
   }
 
   applyLang('zh');
@@ -1377,14 +1403,27 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
   const track = document.getElementById('carTrack');
   const slideCount = track.querySelectorAll('.carousel-slide').length;
   const dots = [...document.querySelectorAll('#carDots button')];
+  const carPrev = document.getElementById('carPrev');
+  const carNext = document.getElementById('carNext');
   function go(n) {
-    slide = ((n % slideCount) + slideCount) % slideCount;
+    slide = Math.max(0, Math.min(slideCount - 1, n));
     track.style.transform = `translateX(-${slide * 100}%)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === slide));
+    carPrev.disabled = slide === 0;
+    carNext.disabled = slide === slideCount - 1;
   }
-  document.getElementById('carPrev').addEventListener('click', () => go(slide - 1));
-  document.getElementById('carNext').addEventListener('click', () => go(slide + 1));
+  carPrev.addEventListener('click', () => go(slide - 1));
+  carNext.addEventListener('click', () => go(slide + 1));
   dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+  go(0);
+
+  function syncFaqHeights() {
+    document.querySelectorAll('.faq-item.open .faq-a').forEach(answer => {
+      answer.style.setProperty('--faq-open-height', `${answer.scrollHeight + 16}px`);
+    });
+  }
+  window.addEventListener('resize', syncFaqHeights, { passive: true });
+  document.fonts?.ready.then(syncFaqHeights);
 
   document.querySelectorAll('.faq-item').forEach((item) => {
     const btn = item.querySelector('.faq-q');
@@ -1398,6 +1437,7 @@ Whether you join us live or watch the recording later, your warm wishes mean jus
       if (!open) {
         item.classList.add('open');
         icon.textContent = '−';
+        syncFaqHeights();
       }
     });
   });
