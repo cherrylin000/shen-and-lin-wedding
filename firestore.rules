@@ -14,5 +14,19 @@ service cloud.firestore {
         && request.resource.data.createdAt == request.time;
       allow update, delete: if false;
     }
+    // Private wishes: public visitors may submit, but cannot query or read them.
+    // Only the Firebase Console or a trusted server using Admin SDK can access them.
+    match /privateWeddingWishes/{id} {
+      allow read, update, delete: if false;
+      allow create: if request.resource.data.keys().hasOnly(['name','message','createdAt'])
+        && request.resource.data.keys().hasAll(['name','message','createdAt'])
+        && request.resource.data.name is string
+        && request.resource.data.name.size() >= 1
+        && request.resource.data.name.size() <= 30
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 1
+        && request.resource.data.message.size() <= 500
+        && request.resource.data.createdAt == request.time;
+    }
   }
 }
