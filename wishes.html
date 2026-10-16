@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>祝福留言墙 | 沈航 × 林涵昀</title>
+<style>
+@font-face{font-family:Wenkai;src:url('assets/fonts/lxgw-wenkai-current.woff2') format('woff2');font-display:swap}
+*{box-sizing:border-box}body{margin:0;background:#faf8f5;color:#594b5d;font:16px/1.8 Wenkai,serif}
+main{max-width:580px;margin:auto;padding:36px 22px 90px}h1{text-align:center;font-size:30px;font-weight:400;color:#b67e8e;margin:20px 0 6px}.sub{text-align:center;margin:0 0 30px}
+.card{border:1px solid #e8d9d6;background:#fffaf5;border-radius:18px;padding:22px;margin:20px 0;box-shadow:0 5px 20px #594b5d09}
+label{display:block;margin:10px 0 4px}input,textarea{width:100%;padding:12px;border:1px solid #d9c8c9;border-radius:10px;background:#fff;font:inherit}textarea{resize:vertical;min-height:110px}
+button{border:1px solid #b67e8e;border-radius:999px;background:transparent;color:#91596d;padding:10px 28px;font:inherit;cursor:pointer}button:disabled{opacity:.5;cursor:wait}
+.visibility-options{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0}.visibility-options label{display:flex;align-items:center;gap:7px;cursor:pointer}.visibility-options input{width:auto;accent-color:#b67e8e}.hint{font-size:13px;opacity:.8;margin:2px 0 12px}.actions{text-align:center;margin-top:16px}.msg{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0}.name{color:#a86e80}.date{font-size:12px;opacity:.7}
+.status{text-align:center;min-height:25px}a{color:#91596d}.top{text-align:center}
+</style></head><body><main><div class="top"><a href="./index.html">← 返回婚礼请柬</a></div><h1>祝福留言墙</h1><p class="sub">沈航 × 林涵昀<br>把你的祝福留在这里，珍藏这一刻。</p>
+<section class="card"><form id="form"><label for="name">你的称呼</label><input id="name" maxlength="30" required placeholder="如何称呼你？" autocomplete="nickname"><label for="wish">想对我们说的话</label><textarea id="wish" maxlength="500" required placeholder="写下一句祝福……"></textarea><fieldset style="border:0;padding:0;margin:16px 0 0"><legend>祝福可见范围</legend><div class="visibility-options"><label><input type="radio" name="visibility" value="public" checked>公开发送</label><label><input type="radio" name="visibility" value="private">私密发送</label></div><p id="visibility-hint" class="hint">公开祝福会显示在留言墙，所有访客可见。</p></fieldset><div class="actions"><button id="send" type="submit">送出祝福 ♡</button></div></form><p id="status" class="status" role="status" aria-live="polite"></p></section>
+<h2 style="font-size:20px;font-weight:400;text-align:center">来自亲友的祝福</h2><div id="messages" aria-live="polite"><p class="status">正在连接留言墙…</p></div></main>
+<script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+import {getFirestore,collection,addDoc,query,orderBy,limit,onSnapshot,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import {firebaseConfig} from './wishes-config.js';
+const status=document.getElementById('status'),messages=document.getElementById('messages'),form=document.getElementById('form'),send=document.getElementById('send');
+const show=(s)=>{status.textContent=s};
+const hint=document.getElementById('visibility-hint');
+form.addEventListener('change',e=>{if(e.target.name==='visibility')hint.textContent=e.target.value==='private'?'私密祝福不会公开展示，仅新人可在受保护的后台查看。':'公开祝福会显示在留言墙，所有访客可见。';});
+if(!firebaseConfig.apiKey || !firebaseConfig.projectId){messages.textContent='留言墙尚未启用，请先完成 Firebase 配置。';send.disabled=true;}
+else {
+try{
+ const db=getFirestore(initializeApp(firebaseConfig)),wishes=collection(db,'weddingWishes');
+ onSnapshot(query(wishes,orderBy('createdAt','desc'),limit(100)),snapshot=>{
+ messages.replaceChildren();
+ if(snapshot.empty){const p=document.createElement('p');p.className='status';p.textContent='还没有留言，欢迎留下第一份祝福。';messages.append(p);return;}
+ snapshot.forEach(doc=>{const data=doc.data(),card=document.createElement('article');card.className='card';
+ const who=document.createElement('div');who.className='name';who.textContent=String(data.name||'亲友').slice(0,30);
+ const body=document.createElement('p');body.className='msg';body.textContent=String(data.message||'').slice(0,500);
+ const date=document.createElement('small');date.className='date';date.textContent=data.createdAt?.toDate?.().toLocaleString('zh-CN')||'刚刚';
+ card.append(who,body,date);messages.append(card);});
+ },()=>{messages.textContent='读取留言失败，请检查网络或数据库权限。';});
+ form.addEventListener('submit',async e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),message=document.getElementById('wish').value.trim();
+ if(!name||!message||name.length>30||message.length>500){show('请填写称呼（30字内）和祝福（500字内）。');return;}
+ send.disabled=true;show('正在送出祝福…');
+ try{const visibility=form.elements.visibility.value;const target=visibility==='private'?collection(db,'privateWeddingWishes'):wishes;await addDoc(target,{name,message,createdAt:serverTimestamp()});form.reset();hint.textContent='公开祝福会显示在留言墙，所有访客可见。';show(visibility==='private'?'私密祝福已送达，仅新人可见。谢谢你！':'祝福已送达，谢谢你！');}
+ catch(err){show('发送失败，请稍后重试。');}finally{send.disabled=false;}
+ });
+}catch(err){messages.textContent='留言墙初始化失败，请检查配置。';send.disabled=true;}
+}
+</script></body></html>
